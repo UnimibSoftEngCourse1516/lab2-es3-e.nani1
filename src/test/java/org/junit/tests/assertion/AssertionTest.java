@@ -753,4 +753,13 @@ public class AssertionTest {
             }
         };
     }
+    
+    public static void greaterThanPrimitives(){
+        Assert.assertGreaterThanInt(8, 4);
+        Assert.assertGreaterThanDouble(8.6, 4.9);
+        Assert.assertGreaterThanFloat(0.9f, 0.02f);
+        Assert.assertGreaterThanByte((byte)64, (byte)32);
+        Assert.assertGreaterThanChar('d', 'k');
+    }
+    
 }

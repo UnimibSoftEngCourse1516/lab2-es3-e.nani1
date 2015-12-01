@@ -1,5 +1,7 @@
 package org.junit;
 
+import static org.junit.Assert.fail;
+
 import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
 import org.junit.internal.ArrayComparisonFailure;
@@ -1018,5 +1020,40 @@ public class Assert {
         String message = String.format("expected %s to be thrown, but nothing was thrown",
                 expectedThrowable.getSimpleName());
         throw new AssertionError(message);
+    }
+    
+    public static void assertGreaterThanInt(int o1, int o2){
+        if (o1 > o2)
+            return;
+        else 
+            fail("ERROR: the first int is lower than the second.");
+    }
+    
+    public static void assertGreaterThanDouble(double o1, double o2){
+        if (o1 > o2)
+            return;
+        else 
+            fail("ERROR: the first double is lower than the second.");
+    }
+    
+    public static void assertGreaterThanFloat(float o1, float o2){
+        if (o1 > o2)
+            return;
+        else 
+            fail("ERROR: the first float is lower than the second.");
+    }
+    
+    public static void assertGreaterThanByte(byte o1, byte o2){
+        if (o1 > o2)
+            return;
+        else 
+            fail("ERROR: the first byte is lower than the second.");
+    }
+    
+    public static void assertGreaterThanChar(char o1, char o2){
+        if (o1 > o2)
+            return;
+        else 
+            fail("ERROR: the first char is lower than the second.");
     }
 }
