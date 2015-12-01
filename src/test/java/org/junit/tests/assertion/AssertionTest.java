@@ -16,6 +16,7 @@ import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Comparator;
 
 import org.junit.Assert;
 import org.junit.Assert.ThrowingRunnable;
@@ -754,6 +755,7 @@ public class AssertionTest {
         };
     }
     
+    @Test
     public static void greaterThanPrimitives(){
         Assert.assertGreaterThanInt(8, 4);
         Assert.assertGreaterThanDouble(8.6, 4.9);
@@ -762,4 +764,16 @@ public class AssertionTest {
         Assert.assertGreaterThanChar('d', 'k');
     }
     
+    @Test
+    public void greatherThan() {
+        
+        Comparator<String> comparator = new Comparator<String>() {
+        public int compare (String o1, String o2) {
+            return o1.compareTo(o2);
+        }
+    };
+        Assert.assertGreaterThan("z", "f", comparator);
+    }
+
 }
+

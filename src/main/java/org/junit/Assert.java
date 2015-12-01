@@ -1056,4 +1056,12 @@ public class Assert {
         else 
             fail("ERROR: the first char is lower than the second.");
     }
+
+    public static <T> void assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator){
+        
+        if (comparator.compare(o1, o2) > 0)
+            return;
+        else 
+            fail("ERROR: the first object is lower than the second.");
+    }
 }
